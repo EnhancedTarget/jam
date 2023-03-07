@@ -3,4 +3,6 @@
 
 from weather_command import weather
 
-print('Bot response:', weather('52.52,13.41'))
+print('Bot response: ', weather('52.52,13.41'))
+
+

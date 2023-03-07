@@ -66,4 +66,13 @@ def has_password_been_pwned(password):
     all_good = f'All good! Your password was never pwned'
     pwned_message = f'Oh no you have been pwned. The password "{password}" appeared {0} times'
 
+
+    def question3_3(message):
+        input()
+
+        if input() == measurements[0] or measurements[1] or measurements[3]:
+        print()
+
+
+
     return pwned_message

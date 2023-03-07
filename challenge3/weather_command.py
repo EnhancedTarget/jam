@@ -2,9 +2,8 @@ from datetime import datetime, timedelta
 import requests
 import json
 
-
 city_coords = {
-    'galway': ('53.270668', '-9.056790'),
+    'galway': ('53.270668', '9.056790'),
     'oslo': ('59.913868', '10.752245'),
     'london': ('51.507351', '-0.127758')
 }
@@ -17,11 +16,12 @@ measurements = {
 
 def weather(message):
     message = message.lower()
-
+    
     # Let's build the API call!
 
     # For challenge 3.1, you'll need to get the longitude and latitude for Galway
     # and put them in the params below.
+    
 
     # For 3.2, looks like you'll need a mapping of cities to coordinates. Check out
     # city_coords above, and wire it up to solve this challenge!
@@ -31,8 +31,8 @@ def weather(message):
     date_now = (datetime.now() - timedelta(days=-1)).strftime('%Y-%m-%d')
     daily_params = ['temperature_2m_max', 'rain_sum', 'windspeed_10m_max']
     params = {
-        'latitude': 0,  # You need to update this
-        'longitude': 0, # ... and this
+        'latitude': 53.270668,  # You need to update this
+        'longitude': 9.056790, # ... and this
         'start_date': date_now,
         'end_date': date_now,
         'timezone': 'GMT',
@@ -47,4 +47,5 @@ def weather(message):
     print(json.dumps(response, indent=4))
 
     # This is a placeholder response to show how to drill into the info that you're interested in.
-    return response['daily']['time'][0]
+    return response['daily']['temperature_2m_max'][0]
+
