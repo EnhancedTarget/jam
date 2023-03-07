@@ -22,6 +22,12 @@ def problem2_1(message):
     all_employees = get_all_employees_input(message)
     beginsWithLetterCCount = 0
 
+    for i in all_employees:
+        #print(i[0])
+        if i[0] == "C":
+            beginsWithLetterCCount+=1
+        elif i[0] == "c":
+            beginsWithLetterCCount+=1      
 
     return str(beginsWithLetterCCount)
 
@@ -29,6 +35,9 @@ def problem2_1(message):
 def problem2_2(message):
     all_employees = get_all_employees_input(message)
     peopleWithLongerThan8CharacterLastnamesCount = 0
+    
+    for x in all_employees:
+        print(len(all_employees))
 
 
     return str(peopleWithLongerThan8CharacterLastnamesCount)
@@ -40,3 +49,7 @@ def problem2_3(message):
 
 
     return str(employeesWhoWillGetBonusesCount)
+
+print(problem2_1(all_employees))
+print(problem2_2(all_employees))
+#print(problem2_3(all_employees))

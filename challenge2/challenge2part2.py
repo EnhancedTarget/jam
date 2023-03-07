@@ -17,9 +17,13 @@ def get_prices_input(message):
     return prices
 
 
+
 def problem2_4(message):
     prices = get_prices_input(message)
     mostExpensivePrice = 0
+
+    for i in prices:
+        print(i[0])
 
     return str(mostExpensivePrice)
 
@@ -27,6 +31,8 @@ def problem2_4(message):
 def problem2_5(message):
     prices = get_prices_input(message)
     totalCost = 0
+
+    
 
 
     return str(totalCost)
@@ -38,3 +44,5 @@ def problem2_6(message):
 
 
     return str(totalCost)
+
+    print(problem2_4(prices))

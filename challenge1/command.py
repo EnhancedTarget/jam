@@ -8,8 +8,13 @@ def hello(message):
 
     message = input("please enter your name: ")
 
+
+    #Challenge 1
+
     if len(message) > 0:
         print("Hello,",message)
     
     elif len(message) == 0:
         return("Hello Cisco!") 
+
+    
