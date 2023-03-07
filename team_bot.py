@@ -5,6 +5,8 @@ from webex_bot.webex_bot import WebexBot
 import logging
 from webex_bot.models.command import Command
 from challenge1.command import hello
+from challenge2.challenge2part1 import *
+from challenge2.challenge2part2 import *
 
 
 log = logging.getLogger(__name__)
@@ -53,5 +55,12 @@ bot = WebexBot(teams_bot_token=os.getenv("WEBEX_TEAMS_ACCESS_TOKEN"),
 # Round 1
 bot.add_command(JamCommand('hello', 'Hello, Cisco!', hello))
 
+# Round 2
+bot.add_command(JamCommand('2.1', "2.1", problem2_1))
+bot.add_command(JamCommand('2.2', '2.2', problem2_2))
+bot.add_command(JamCommand('2.3', '2.3', problem2_3))
+bot.add_command(JamCommand('2.4', '2.4', problem2_4))
+bot.add_command(JamCommand('2.5', '2.5', problem2_5))
+bot.add_command(JamCommand('2.6', '2.6', problem2_6))
 
 bot.run()
