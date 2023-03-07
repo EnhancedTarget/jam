@@ -2,10 +2,10 @@ from datetime import datetime, timedelta
 import requests
 import json
 
-city_coords = {
+city_coords = {    
     'galway': ('53.270668', '9.056790'),
-    'oslo': ('59.913868', '10.752245'),
-    'london': ('51.507351', '-0.127758')
+    'oslo': ('59.9139', '10.7522'),
+    'london': ('51.507351', '0.127758')
 }
 
 measurements = {
@@ -47,5 +47,14 @@ def weather(message):
     print(json.dumps(response, indent=4))
 
     # This is a placeholder response to show how to drill into the info that you're interested in.
-    return response['daily']['temperature_2m_max'][0]
 
+    loc = input("Where are you checking the weather today? ")
+
+    return print("The temperature in Galway today is:",response['daily']['temperature_2m_max'][0])
+
+    if loc == 'galway':
+        print("The temperature in Galway today is:",response['galway']['temperature_2m_max'][0])
+    elif loc == 'oslo':
+        print("The temperature in Galway today is:",response['olso']['temperature_2m_max'][0])
+    elif loc == 'london':
+        print("The temperature in Galway today is:",response['london']['temperature_2m_max'][0])

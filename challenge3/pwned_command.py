@@ -68,11 +68,20 @@ def has_password_been_pwned(password):
 
 
     def question3_3(message):
-        input()
+    
+        current_measurement = input()
+        current_city = input()
+        if current_measurement == measurements[0]:
+            print(measurements('temperature'))
+            return
+        if current_measurement == measurements[1]:
+            print(measurements('rain'))
+        if current_measurement == measurements[2]:
+            print(measurements('windspeed'))
 
-        if input() == measurements[0] or measurements[1] or measurements[3]:
-        print()
 
 
 
     return pwned_message
+
+print(question3_3(message))
